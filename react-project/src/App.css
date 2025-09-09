@@ -1,0 +1,229 @@
+/* === Reset e base === */
+html,
+body,
+#root {
+  background-color: inherit;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* === Tema === */
+.dark {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
+.light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* === Contenitore principale === */
+.App {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Titolo === */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+/* === Gruppo bottoni === */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#button-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+/* === Bottoni === */
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #00bcd4;
+  color: #1e1e2f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+/* === Filtri === */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* === Select === */
+select {
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark select {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.light select {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+/* === Task list === */
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* === Unassigned list === */
+.unassigned-list {
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.dark .unassigned-list {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+.light .unassigned-list {
+  background-color: #fff;
+  color: #333;
+}
+
+.unassigned-list h2 {
+  margin-bottom: 1rem;
+  color: #ff9800;
+}
+
+.unassigned-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.unassigned-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+
+.unassigned-list li:last-child {
+  border-bottom: none;
+}
+
+/* === Animazioni === */
+.App > * {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .filters label {
+    font-size: 0.9rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+  }
+
+  .unassigned-list {
+    padding: 1rem;
+  }
+}
