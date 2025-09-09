@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/tasks/");
+        const response = await fetch("https://moonshotcgi.pythonanywhere.com/tasks/");
         const data = await response.json();
         const sortedTasks = [...data].sort(
           (a, b) => new Date(a.deadline) - new Date(b.deadline)
@@ -44,7 +44,7 @@ function App() {
 
     const fetchMembers = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/members/");
+        const response = await fetch("https://moonshotcgi.pythonanywhere.com/members/");
         const data = await response.json();
         setMembers(data);
       } catch (error) {
@@ -54,7 +54,7 @@ function App() {
 
     const fetchAssets = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/assets/");
+        const response = await fetch("https://moonshotcgi.pythonanywhere.com/assets/");
         const data = await response.json();
         setAssets(data);
       } catch (error) {
